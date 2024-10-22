@@ -10,6 +10,7 @@
   display: block;
 }
 
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -23,30 +24,37 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
-/* Default Variables for Light Mode (Milpitas-inspired) */
+/* Default Variables for Light Mode (Yellow, Blue, White, Gray) */
 :root {
-  --bg-color: #f9f9f9;               /* Light grey */
-  --text-color: #000000;              /* Dark grey */
-  --sidebar-bg: #004ba0;              /* Milpitas High blue */
-  --navbar-bg: #004ba0;               /* Same blue for uniformity */
-  --card-bg: #ffffff;                 /* White for cards */
-  --highlight-color: #ffd700;         /* Gold/yellow for accent */
+  --bg-color: #f0f0f0;               /* Light gray background */
+  --text-color: #1a1a1a;              /* Dark gray/black for text */
+  --sidebar-bg: #005f99;              /* Bold blue for the sidebar */
+  --navbar-bg: #005f99;               /* Same bold blue for uniformity */
+  --card-bg: #ffffff;                 /* White for card backgrounds */
+  --highlight-color: #ffd700;         /* Bright yellow for highlights */
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Variables (Black, Navy, Yellow, White) */
 body.dark-mode {
-  --bg-color: #1c1c28;                /* Deep blue/black */
-  --text-color: #f4f4f4;              /* Light grey text */
-  --sidebar-bg: #1a1a2e;              /* Darker blue/black */
-  --navbar-bg: #1f4b6e;               /* Elegant dark blue */
-  --card-bg: #2b2b3a;                 /* Dark card background */
-  --highlight-color: #d4af37;         /* Subtle gold */
+  --bg-color: #454444;                /* Pure black background */
+  --text-color: #ffffff;              /* White text */
+  --sidebar-bg: #001f3f;              /* Deep navy blue for the sidebar */
+  --navbar-bg: #001f3f;               /* Navy blue for the navbar */
+  --card-bg: #2b2b2b;                 /* Dark gray for card backgrounds */
+  --highlight-color: #ffd700;         /* Bright yellow for highlights */
+}
+
+.menu-icon {
+  width: 50px;      /* Adjust the size as needed */
+  height: 50px;
+  object-fit: contain;  /* Ensures the image maintains its aspect ratio */
+  cursor: pointer;
 }
 
 /* Sidebar */
 .sidebar {
   height: 100vh;
-  width: 250px;
+  width: 200px;
   position: fixed;
   top: 0;
   left: 0;
@@ -84,7 +92,7 @@ body.dark-mode {
 
 .sidebar ul li a:hover {
   background-color: var(--highlight-color);
-  border-radius: 5px;
+  border-radius: 2px;
   color: #000;
 }
 
@@ -101,7 +109,7 @@ body.dark-mode {
 
 /* Collapsed sidebar */
 .sidebar.collapsed {
-  width: 60px;
+  width: 70px;
   transition: width 0.3s;
 }
 
@@ -129,7 +137,9 @@ body.dark-mode {
   align-items: center;
   padding: 15px 20px;
   border-radius: 5px;
+  margin-top: -20px; /* Adjust the negative value to move it up */
 }
+
 
 .user-profile {
   display: flex;
@@ -216,19 +226,241 @@ body.dark-mode {
   color: #000;
 }
 
+/* Notification Bell Styling */
+.notifications {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.notifications .material-icons {
+  color: var(--text-color);
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+
+.notifications:hover .material-icons {
+  color: var(--highlight-color);
+}
+
+.notifications .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* User Profile Styling */
 .user-profile {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: inherit; /* Ensures the text inherits the color from the parent */
-  padding: 10px;
-}
-
-.user-profile i {
-  margin-right: 8px; /* Space between the icon and the text */
+  color: var(--text-color);
+  background-color: var(--navbar-bg);
+  padding: 10px 15px;
+  border-radius: 30px;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .user-profile:hover {
-  background-color: #d9eb1868; /* Example hover effect */
+  background-color: var(--highlight-color);
+  color: #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile i {
+  font-size: 2rem;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.user-profile span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-profile:hover i {
+  color: #000;
+}
+
+
+/* Advanced Search Bar Styling */
+.search-bar {
+  position: relative;
+  width: 100%; /* Make it responsive - adjust as needed */
+  max-width: 250px; /* Adjust based on layout */
+  display: flex;
+  align-items: center;
+  background-color: #24bb93; /* Consistent color for the entire bar */
+  border-radius: 50px; /* Smooth rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  overflow: hidden; /* Clean and smooth transitions */
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 50px 0 0 50px; /* Rounded left side */
+  background-color: #f1f1f1; /* Light background for the input */
+  color: #333; /* Darker text for readability */
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: #aaa; /* Subtle placeholder color */
+  font-style: italic;
+}
+
+.search-bar input:focus {
+  background-color: #e6e6e6; /* Darken background on focus */
+  padding-left: 25px; /* Slight expansion for focus */
+}
+
+.search-bar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #24bb93; /* Consistent blue for the button */
+  border: none;
+  border-radius: 0 50px 50px 0; /* Rounded right side */
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #24bb93; /* Darker shade on hover for better contrast */
+  transform: scale(1.05); /* Slight enlarge effect on hover */
+}
+
+.search-bar button i {
+  color: white; /* Consistent color for the icon */
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.search-bar button:hover i {
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* Fancy Activity Log Styling */
+/* Fancy Activity Log Styling */
+.activity-log {
+  background-color: var(--card-bg); /* Uses card background variable */
+  color: var(--text-color); /* Adapts to light or dark mode */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 10px 20px var(--shadow-color, rgba(0, 0, 0, 0.2)); /* Shadow adapts */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 40px; /* Add space above the activity log */
+}
+
+.activity-log:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 15px 30px var(--shadow-color, rgba(0, 0, 0, 0.3)); /* Stronger shadow */
+}
+
+.activity-log h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--highlight-color); /* Bright highlight for the title */
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.activity-log h3:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--highlight-color); /* Highlight under the title */
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/* List Styling */
+.activity-log ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+  animation: fadeIn 1s ease-in-out; /* Animate the list on load */
+}
+
+.activity-log ul li {
+  position: relative;
+  padding: 15px;
+  background-color: var(--li-bg-color, #ffffff); /* Light background for items in light mode */
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px var(--shadow-color, rgba(0, 0, 0, 0.1)); /* Light shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: var(--text-color);
+}
+
+/* Light Mode Specific Adjustments */
+body:not(.dark-mode) .activity-log ul li {
+  background-color: #e6eaf0; /* Softer, distinct background for light mode */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow for light mode */
+}
+
+.activity-log ul li:hover {
+  background-color: var(--li-hover-bg, #c4d1e0); /* Better hover contrast in light mode */
+  transform: translateX(10px); /* Slight slide effect */
+}
+
+.activity-log ul li i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: var(--highlight-color); /* Matching icon color */
+  transition: transform 0.3s ease;
+}
+
+/* Icon Rotation Effect on Hover */
+.activity-log ul li:hover i {
+  transform: rotate(360deg); /* Fun rotate effect on hover */
+}
+
+/* Fade In Effect for List */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark Mode Specific Adjustments */
+body.dark-mode .activity-log ul li {
+  background-color: #1c1c1d; /* Darker background for items in dark mode */
+  color: var(--text-color); /* Ensure text is visible */
+}
+
+body.dark-mode .activity-log ul li:hover {
+  background-color: #8a98a7; /* Darker hover background for dark mode */
 }

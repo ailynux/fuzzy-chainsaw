@@ -11,15 +11,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Sidebar -->
+  <!-- Sidebar -->p
   <div class="sidebar" id="sidebar">
     <button class="collapse-btn" id="collapse-btn">
-      <i class="material-icons">menu</i>
+      <img src="assets/mapconnect_logo.png" alt="MapConnect Logo" class="menu-icon">
     </button>
     <ul>
       <li><a href="#"><i class="material-icons">dashboard</i> <span>Dashboard</span></a></li>
       <li><a href="#"><i class="material-icons">map</i> <span>School Maps</span></a></li>
-      <li><a href="#"><i class="material-icons">report</i> <span>Reports</span></a></li>
       <li><a href="#"><i class="material-icons">school</i> <span>Schools</span></a></li>
       <li><a href="#"><i class="material-icons">person</i> <span>Profile</span></a></li>
       <li><a href="#"><i class="material-icons">settings</i> <span>Settings</span></a></li>
@@ -34,7 +33,16 @@
         <button class="theme-toggle-btn" id="theme-toggle-btn">
             <i class="material-icons">brightness_6</i>
         </button>
-      <h1>Welcome to MapConnect Admin</h1>
+      <h1> Welcome MapConnect Admin</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button><i class="material-icons">search</i></button>
+      </div>
+      <a href="#" class="notifications">
+        <i class="material-icons">notifications</i>
+        <span class="badge">3</span>
+      </a>
+      
       <a href="/admin-profile" class="user-profile">
         <i class="material-icons">account_circle</i>
         <span>Admin</span>
@@ -43,6 +51,15 @@
     </div>
 
     <!-- Content Sections -->
+    <div class="activity-log">
+      <h3>Recent Activity</h3>
+      <ul>
+        <li>New school added: Lincoln High</li>
+        <li>Updated map for Harvard Campus</li>
+        <li>3 feedback messages received</li>
+      </ul>
+    </div>
+    
     <div class="dashboard-overview">
       <div class="overview-card">
         <h3>Schools Registered</h3>

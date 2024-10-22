@@ -9,14 +9,15 @@ function toggleSidebar() {
 // Toggle between dark and light mode
 function toggleTheme() {
     const body = document.body;
-    body.classList.toggle("dark-mode");
-    body.classList.toggle("light-mode");
+    body.classList.toggle("dark-mode"); // Only toggle dark mode
 }
 
 // Set initial theme based on preference
 window.onload = function () {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    document.body.classList.add(isDarkMode ? "dark-mode" : "light-mode");
+    if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+    }
 };
 
 // Sidebar collapse logic
