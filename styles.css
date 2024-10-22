@@ -1,4 +1,15 @@
 /* General Reset */
+
+/* Hide pages by default */
+.hidden {
+  display: none;
+}
+
+/* Show the selected page */
+.page {
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
