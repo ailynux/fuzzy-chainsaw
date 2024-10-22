@@ -215,3 +215,20 @@ body.dark-mode {
   border-radius: 5px;
   color: #000;
 }
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Ensures the text inherits the color from the parent */
+  padding: 10px;
+}
+
+.user-profile i {
+  margin-right: 8px; /* Space between the icon and the text */
+}
+
+.user-profile:hover {
+  background-color: #d9eb1868; /* Example hover effect */
+  cursor: pointer;
+}
