@@ -1,4 +1,5 @@
 # 🪚 Fuzzy Chainsaw 🪚
+- updates
 
 [![Fuzzy Level](https://img.shields.io/badge/Fuzzy%20Level-Over%209000-ff69b4)](https://github.com/yourusername/fuzzy-chainsaw)
 [![Chainsaw Power](https://img.shields.io/badge/Chainsaw%20Power-Maximum%20Overdrive-red)](https://github.com/yourusername/fuzzy-chainsaw)
